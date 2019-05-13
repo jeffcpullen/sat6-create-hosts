@@ -323,6 +323,10 @@
 
         - include_role:
             name: "ahuffman.api"
+          retries: 3
+          delay: 10
+          register: result
+          until: result is succeeded
           vars:
             api_task_name: "Power on Satellite6 host {{ host_fqdn }}"
             api_url_path: "api/v2/hosts/{{ create_host_results.json.id }}/power"
