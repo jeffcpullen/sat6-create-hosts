@@ -320,6 +320,9 @@
         - debug:
             var: "create_host_results"
             verbosity: "1"
+            
+        - pause:
+            minutes: 1
 
         - include_role:
             name: "ahuffman.api"
